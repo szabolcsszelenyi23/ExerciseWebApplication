@@ -1,3 +1,6 @@
+using ExerciseWebApplication1.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace ExerciseWebApplication1
 {
     public class Program
@@ -8,6 +11,7 @@ namespace ExerciseWebApplication1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ExpensesDbContext>(options => options.UseInMemoryDatabase("ExpensesDb"));
 
             var app = builder.Build();
 
